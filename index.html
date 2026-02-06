@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Memories ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&family=Charm&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <div class="bg-gradient"></div>
+
+    <main class="container">
+        <section id="loginSection" class="card active">
+            <h1 class="charm-font">Our Secret</h1>
+            <p>ใส่รหัสผ่านเพื่อเข้าสู่ความทรงจำ</p>
+            <input type="password" id="passwordInput" placeholder="รหัสผ่าน (1234)">
+            <button class="btn btn-main" onclick="checkPassword()">เปิดกล่องความทรงจำ</button>
+            <p id="errorMsg" class="error">ลองใหม่อีกครั้งนะ...</p>
+        </section>
+
+        <section id="valentineSection" class="card">
+            <h1 class="charm-font">Memories</h1>
+            <p>บันทึกเรื่องราวดีๆ ของเราในวันนี้</p>
+            
+            <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                <img id="previewImg" src="https://cdn-icons-png.flaticon.com/512/3342/3342137.png" alt="Upload">
+                <p id="uploadText">คลิกเพื่อเพิ่มรูปความทรงจำ</p>
+                <input type="file" id="fileInput" hidden accept="image/*" onchange="previewImage(event)">
+            </div>
+
+            <textarea id="memoryNote" placeholder="เขียนความรู้สึกของคุณที่นี่..."></textarea>
+
+            <div class="btn-container" id="btnContainer">
+                <button id="yesBtn" class="btn btn-save">บันทึกความทรงจำ</button>
+                <button id="noBtn" class="btn btn-skip">ลบทิ้ง</button>
+            </div>
+        </section>
+
+        <section id="successSection" class="card">
+            <div class="heart-icon">❤️</div>
+            <h1 class="charm-font">Saved!</h1>
+            <p>ความทรงจำถูกบันทึกไว้ในใจแล้ว</p>
+            <button class="btn btn-main" onclick="location.reload()">กลับหน้าแรก</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
